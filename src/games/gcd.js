@@ -13,8 +13,8 @@ const gcd = (num1, num2) => {
 };
 
 const getData = () => {
-  const num1 = getRandomNumber();
-  const num2 = getRandomNumber();
+  const num1 = getRandomNumber(1, 50);
+  const num2 = getRandomNumber(1, 50);
   const questionNum = `${num1} ${num2}`;
   const correctAnswer = String(gcd(num1, num2));
   return [questionNum, correctAnswer];

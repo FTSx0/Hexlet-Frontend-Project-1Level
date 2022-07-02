@@ -15,8 +15,8 @@ const calculator = (num1, num2, operator) => {
 
 const getData = () => {
   const operators = ['-', '+', '*'];
-  const num1 = getRandomNumber();
-  const num2 = getRandomNumber();
+  const num1 = getRandomNumber(0, 50);
+  const num2 = getRandomNumber(0, 50);
   const operatorID = Math.floor(Math.random() * operators.length);
   const operator = operators[operatorID];
   const questionNum = `${num1} ${operator} ${num2}`;
