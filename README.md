@@ -15,3 +15,4 @@
 
 <div><b>Игра #1:</b> <a href="https://asciinema.org/a/505621">"Проверка на чётность"</a></div> 
 <div><b>Игра #2:</b> <a href="https://asciinema.org/a/505622">"Калькулятор"</a></div> 
+<div><b>Игра #3:</b> <a href="https://asciinema.org/a/505639">"Наибольший общий делитель"</a></div> 
