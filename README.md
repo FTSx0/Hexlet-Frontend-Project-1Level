@@ -17,3 +17,4 @@
 <div><b>Игра #2:</b> <a href="https://asciinema.org/a/505622">"Калькулятор"</a></div> 
 <div><b>Игра #3:</b> <a href="https://asciinema.org/a/505639">"Наибольший общий делитель"</a></div> 
 <div><b>Игра #4:</b> <a href="https://asciinema.org/a/505676">"Арифметическая прогрессия"</a></div> 
+<div><b>Игра #5:</b> <a href="https://asciinema.org/a/505758">"Простое ли число?"</a></div> 
