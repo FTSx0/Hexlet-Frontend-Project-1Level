@@ -1,33 +1,40 @@
 import launch from '../index.js';
-import getRandomNumber from '../random.js';
+import { getRandomNumber, getRandomID } from '../utils.js';
 
 const gameRules = 'What number is missing in the progression?';
 
-const progression = (firstNum, progressionLength, stepNum) => {
+const minStep = 1;
+const maxStep = 7;
+
+const minLength = 4;
+const maxLength = 10;
+
+const min = 1;
+const max = 50;
+
+const createProgression = (firstNum, length, stepNum) => {
   const result = [];
-  for (let i = 0; i <= progressionLength; i += 1) {
+  for (let i = 0; i <= length; i += 1) {
     result.push(firstNum + stepNum * i);
   }
   return result;
 };
 
-const getData = () => {
-  const progressionLength = getRandomNumber(4, 10);
-  const firstNum = getRandomNumber(1, 50);
-  const stepNum = getRandomNumber(1, 7);
-  const progressionArr = progression(firstNum, progressionLength, stepNum);
-  const hidenItem = getRandomNumber(0, progressionArr.length - 1);
-  const correctAnswer = String(progressionArr[hidenItem]);
+const getTask = () => {
+  const length = getRandomNumber(minLength, maxLength);
+  const firstNumber = getRandomNumber(min, max);
+  const step = getRandomNumber(minStep, maxStep);
+  const progression = createProgression(firstNumber, length, step);
+  const hidenItem = getRandomID(progression);
 
-  progressionArr[hidenItem] = '..';
-
-  const questionNum = progressionArr.join(' ');
-
-  return [questionNum, correctAnswer];
+  const answer = String(progression[hidenItem]);
+  progression[hidenItem] = '..';
+  const question = progression.join(' ');
+  return [question, answer];
 };
 
 const startGame = () => {
-  launch(gameRules, getData);
+  launch(gameRules, getTask);
 };
 
 export default startGame;

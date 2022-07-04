@@ -1,14 +1,17 @@
 import launch from '../index.js';
-import getRandomNumber from '../random.js';
+import { getRandomNumber } from '../utils.js';
 
 const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+const min = 1;
+const max = 50;
 
 const isPrime = (number) => {
   if (number < 2) {
     return false;
   }
-
-  for (let i = 2; i <= number / 2; i += 1) {
+  const checkLimit = Math.sqrt(number);
+  for (let i = 2; i <= checkLimit; i += 1) {
     if (number % i === 0) {
       return false;
     }
@@ -16,14 +19,14 @@ const isPrime = (number) => {
   return true;
 };
 
-const getData = () => {
-  const questionNum = getRandomNumber(1, 50);
-  const correctAnswer = isPrime(questionNum) ? 'yes' : 'no';
-  return [questionNum, correctAnswer];
+const getTask = () => {
+  const question = getRandomNumber(min, max);
+  const answer = isPrime(question) ? 'yes' : 'no';
+  return [question, answer];
 };
 
 const startGame = () => {
-  launch(gameRules, getData);
+  launch(gameRules, getTask);
 };
 
 export default startGame;

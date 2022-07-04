@@ -10,12 +10,12 @@ const launch = (gameRules, getTask) => {
   console.log(gameRules);
 
   for (let i = 1; i <= questionCount; i += 1) {
-    const [questionNum, correctAnswer] = getTask();
-    console.log(`Question: ${questionNum}`);
+    const [question, answer] = getTask();
+    console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    const isCorrect = (userAnswer !== correctAnswer);
+    const isCorrect = (userAnswer !== answer);
     if (isCorrect) {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`);
       console.log(`Let's try again, ${name}!`);
       return;
     }

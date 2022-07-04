@@ -1,31 +1,38 @@
 import launch from '../index.js';
-import getRandomNumber from '../random.js';
+import { getRandomNumber, getRandomID } from '../utils.js';
 
 const gameRules = 'What is the result of the expression?';
 
-const calculator = (num1, num2, operator) => {
-  let result = 0;
-  if (operator === '-') {
-    result = num1 - num2;
-  } else if (operator === '+') {
-    result = num1 + num2;
-  } else result = num1 * num2;
-  return result;
+const min = 0;
+const max = 50;
+
+const calculate = (a, b, operator) => {
+  switch (operator) {
+    case '+':
+      return (a + b);
+    case '-':
+      return (a - b);
+    case '*':
+      return (a * b);
+    default:
+      return null;
+  }
 };
 
-const getData = () => {
+const getTask = () => {
   const operators = ['-', '+', '*'];
-  const num1 = getRandomNumber(0, 50);
-  const num2 = getRandomNumber(0, 50);
-  const operatorID = Math.floor(Math.random() * operators.length);
+  const number1 = getRandomNumber(min, max);
+  const number2 = getRandomNumber(min, max);
+  const operatorID = getRandomID(operators);
   const operator = operators[operatorID];
-  const questionNum = `${num1} ${operator} ${num2}`;
-  const correctAnswer = String(calculator(num1, num2, operator));
-  return [questionNum, correctAnswer];
+
+  const answer = String(calculate(number1, number2, operator));
+  const question = `${number1} ${operator} ${number2}`;
+  return [question, answer];
 };
 
 const startGame = () => {
-  launch(gameRules, getData);
+  launch(gameRules, getTask);
 };
 
 export default startGame;
