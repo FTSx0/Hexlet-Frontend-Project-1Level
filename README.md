@@ -10,12 +10,12 @@
 
 ## Установка зависимостей:
 ```sh
-$ npm ci
+npm ci
 ```
 
 ## Установка пакета:
 ```sh
-$ npm link
+npm link
 ```
 
 <div><b>Игра #1:</b> <a href="https://asciinema.org/a/505621">"Проверка на чётность"</a></div> 
