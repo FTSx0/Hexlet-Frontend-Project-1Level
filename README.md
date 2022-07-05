@@ -18,8 +18,13 @@ npm ci
 npm link
 ```
 
-<div><b>Игра #1:</b> <a href="https://asciinema.org/a/505621">"Проверка на чётность"</a></div> > $ brain-even
-<div><b>Игра #2:</b> <a href="https://asciinema.org/a/505622">"Калькулятор"</a></div> > $ brain-calc
-<div><b>Игра #3:</b> <a href="https://asciinema.org/a/505639">"Наибольший общий делитель"</a></div> > $ brain-gcd
-<div><b>Игра #4:</b> <a href="https://asciinema.org/a/505676">"Арифметическая прогрессия"</a></div> > $ brain-progression
-<div><b>Игра #5:</b> <a href="https://asciinema.org/a/505758">"Простое ли число?"</a></div> > $ brain-prime
+<div><b>Игра #1:</b> <a href="https://asciinema.org/a/505621">"Проверка на чётность"</a></div> 
+`$ brain-even`
+<div><b>Игра #2:</b> <a href="https://asciinema.org/a/505622">"Калькулятор"</a></div>
+`$ brain-calc`
+<div><b>Игра #3:</b> <a href="https://asciinema.org/a/505639">"Наибольший общий делитель"</a></div>
+`$ brain-gcd`
+<div><b>Игра #4:</b> <a href="https://asciinema.org/a/505676">"Арифметическая прогрессия"</a></div>
+`$ brain-progression`
+<div><b>Игра #5:</b> <a href="https://asciinema.org/a/505758">"Простое ли число?"</a></div>
+`$ brain-prime`
