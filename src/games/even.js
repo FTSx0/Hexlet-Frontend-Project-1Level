@@ -1,7 +1,7 @@
 import { getRandomNumber } from '../utils.js';
 import launch from '../index.js';
 
-const gameRules = 'Answer "yes" if the number is even, otherwise answer "no".';
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const min = 0;
 const max = 50;
@@ -14,7 +14,7 @@ const getTask = () => {
 };
 
 const startGame = () => {
-  launch(gameRules, getTask);
+  launch(description, getTask);
 };
 
 export default startGame;

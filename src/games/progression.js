@@ -1,7 +1,7 @@
 import launch from '../index.js';
-import { getRandomNumber, getRandomID } from '../utils.js';
+import { getRandomNumber, getRandomIndex } from '../utils.js';
 
-const gameRules = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?';
 
 const minStep = 1;
 const maxStep = 7;
@@ -25,7 +25,7 @@ const getTask = () => {
   const firstNumber = getRandomNumber(min, max);
   const step = getRandomNumber(minStep, maxStep);
   const progression = createProgression(firstNumber, length, step);
-  const hidenItem = getRandomID(progression);
+  const hidenItem = getRandomIndex(progression);
 
   const answer = String(progression[hidenItem]);
   progression[hidenItem] = '..';
@@ -34,7 +34,7 @@ const getTask = () => {
 };
 
 const startGame = () => {
-  launch(gameRules, getTask);
+  launch(description, getTask);
 };
 
 export default startGame;

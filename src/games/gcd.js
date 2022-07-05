@@ -1,12 +1,12 @@
 import launch from '../index.js';
 import { getRandomNumber } from '../utils.js';
 
-const gameRules = 'Find the greatest common divisor of given numbers.';
+const description = 'Find the greatest common divisor of given numbers.';
 
-const min = 1;
+const min = 0;
 const max = 50;
 
-const gcd = (x, y) => ((!y) ? x : gcd(y, x % y));
+const gcd = (x, y) => ((y===0) ? x : gcd(y, x % y));
 
 const getTask = () => {
   const number1 = getRandomNumber(min, max);
@@ -18,7 +18,7 @@ const getTask = () => {
 };
 
 const startGame = () => {
-  launch(gameRules, getTask);
+  launch(description, getTask);
 };
 
 export default startGame;

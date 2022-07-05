@@ -1,30 +1,29 @@
 import launch from '../index.js';
-import { getRandomNumber, getRandomID } from '../utils.js';
+import { getRandomNumber, getRandomIndex } from '../utils.js';
 
-const gameRules = 'What is the result of the expression?';
-
+const description = 'What is the result of the expression?';
+const operators = ['-', '+', '*'];
 const min = 0;
 const max = 50;
 
-const calculate = (a, b, operator) => {
+const calculate = (x, y, operator) => {
   switch (operator) {
     case '+':
-      return (a + b);
+      return (x + y);
     case '-':
-      return (a - b);
+      return (x - y);
     case '*':
-      return (a * b);
+      return (x * y);
     default:
       return null;
   }
 };
 
 const getTask = () => {
-  const operators = ['-', '+', '*'];
   const number1 = getRandomNumber(min, max);
   const number2 = getRandomNumber(min, max);
-  const operatorID = getRandomID(operators);
-  const operator = operators[operatorID];
+  const operatorIndex = getRandomIndex(operators);
+  const operator = operators[operatorIndex];
 
   const answer = String(calculate(number1, number2, operator));
   const question = `${number1} ${operator} ${number2}`;
@@ -32,7 +31,7 @@ const getTask = () => {
 };
 
 const startGame = () => {
-  launch(gameRules, getTask);
+  launch(description, getTask);
 };
 
 export default startGame;

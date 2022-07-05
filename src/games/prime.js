@@ -1,7 +1,7 @@
 import launch from '../index.js';
 import { getRandomNumber } from '../utils.js';
 
-const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const min = 1;
 const max = 50;
@@ -26,7 +26,7 @@ const getTask = () => {
 };
 
 const startGame = () => {
-  launch(gameRules, getTask);
+  launch(description, getTask);
 };
 
 export default startGame;
